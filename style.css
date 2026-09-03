@@ -1278,20 +1278,22 @@ body {
     }
 
     .services {
-        padding-top: 64px;
-        padding-bottom: 64px;
+        padding-top: 32px;
+        padding-bottom: 32px;
     }
     
-        .section-title {
+    .section-title {
         font-size: 42px;
     }
     
-    .services,
     .contact-section,
-
     .stats-section {
         padding-top: 32px;
         padding-bottom: 60px;
+    }
+    
+    .stats-section {
+        padding-top: 32px;
     }
 
     .portfolio-cta {
