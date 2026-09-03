@@ -160,8 +160,15 @@ body {
     transition: none;
 }
 
-.logo:hover .logo-icon svg circle:first-child {
-    animation: eclipseOutline 2.5s ease-in-out forwards;
+@media (hover: hover) {
+    .logo:hover .logo-icon svg circle:first-child {
+        animation: eclipseOutline 2.5s ease-in-out forwards;
+    }
+
+    .logo:hover .logo-icon svg circle:last-child {
+        animation: eclipseFilled 2.5s ease-in-out forwards;
+        transition: none;
+    }
 }
 
 /* Animate the filled circle (moves right) */
@@ -170,7 +177,11 @@ body {
     cx: 62;
 }
 
-.logo:hover .logo-icon svg circle:last-child {
+.logo.tapped .logo-icon svg circle:first-child {
+    animation: eclipseOutline 2.5s ease-in-out forwards;
+}
+
+.logo.tapped .logo-icon svg circle:last-child {
     animation: eclipseFilled 2.5s ease-in-out forwards;
     transition: none;
 }
@@ -190,7 +201,13 @@ body {
     border-radius: 50%;
 }
 
-.logo:hover .logo-icon::after {
+@media (hover: hover) {
+    .logo:hover .logo-icon::after {
+        animation: eclipseShimmer 2.75s ease-in-out forwards;
+    }
+}
+
+.logo.tapped .logo-icon::after {
     animation: eclipseShimmer 2.75s ease-in-out forwards;
 }
 
@@ -265,7 +282,7 @@ body {
 .nav-link {
     color: var(--color-primary);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: bold;
     font-size: 15px;
     letter-spacing: 2px;
     position: relative;
@@ -289,6 +306,10 @@ body {
 
 .nav-link:hover::after {
     width: 100%;
+}
+
+.nav-link--mobile-only {
+    display: none;
 }
 
 /* Mobile Menu Toggle */
@@ -359,7 +380,7 @@ body {
 .hero-tagline {
     font-size: 30px;
     color: var(--color-primary);
-    font-style: italic;
+    font-style: normal;
     margin-bottom: 48px;
     font-weight: 500;
     letter-spacing: 1px;
@@ -799,6 +820,11 @@ body {
     margin-top: 60px;
 }
 
+.portfolio-grid-section {
+    background: #EFEDE8;
+    padding: 70px 0;
+}
+
 .work-item {
     position: relative;
     cursor: pointer;
@@ -892,16 +918,29 @@ body {
     margin-bottom: 28px;
 }
 
+.contact-section.portfolio-cta {
+    background: #EFEDE8;
+}
+
+.services.who-we-are-section {
+    background: #EFEDE8;
+    padding: 60px 0;
+}
+
 .contact-intro {
     text-align: center;
     font-size: 20px;
-    font-style: italic;
+    font-style: normal;
     margin-bottom: 60px;
     font-weight: var(--font-weight-regular);
     line-height: 1.7;
     position: relative;
     padding: 12px;
     color: #222222;
+}
+
+.contact-hero-description {
+    padding-bottom: 24px;
 }
 
 .services-cta-intro::after {
@@ -1169,6 +1208,10 @@ body {
         justify-content: center;
     }
     
+    .nav-link--mobile-only {
+        display: block;
+    }
+    
     .feature-content,
     .about-content {
         grid-template-columns: 1fr;
@@ -1229,18 +1272,75 @@ body {
         flex-direction: column;
         gap: 20px;
     }
+
+    .services .section-title {
+        margin-bottom: 24px;
+    }
+
+    .services {
+        padding-top: 64px;
+        padding-bottom: 64px;
+    }
     
-    .section-title {
+        .section-title {
         font-size: 42px;
     }
     
     .services,
-    .stats-section,
-    .work-section,
     .contact-section,
+
+    .stats-section {
+        padding-top: 32px;
+        padding-bottom: 60px;
+    }
+
+    .portfolio-cta {
+        padding-top: 32px;
+        padding-bottom: 32px;
+        background: var(--color-bg-alt);
+    }    
+
+    .services.who-we-are-section {
+        padding-top: 32px;
+        padding-bottom: 40px;
+    }
+
+    .work-section {
+        padding-top: 48px;
+        padding-bottom: 48px;
+    }
+
+    .work-section .section-title {
+        margin-bottom: 48px;
+    }
+    
+    .work-button-wrapper {
+        margin-top: 32px;
+    }
+    
+    .services-grid {
+        gap: 16px;
+    }
+
+    .work-grid {
+        gap: 28px;
+    }
+
+    .service-card {
+        padding: 4px 0;
+    }
+
+    .services-button-wrapper {
+        margin-top: 32px;
+    }
+
     .footer {
-        padding-top: 80px;
-        padding-bottom: 80px;
+        padding-top: 30px;
+    }
+
+    .portfolio-grid-section {
+        background: #EFEDE8;
+        padding-top: 32px;
     }
     
     .feature-stats {
@@ -1256,6 +1356,35 @@ body {
     .stats-grid {
         grid-template-columns: 1fr;
         gap: 50px;
+    }
+
+    .footer-content {
+        margin-bottom: 24px;
+        gap: 32px;
+        text-align: center;
+        justify-items: center;
+    }
+
+    .footer-brand {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-links {
+        text-align: center;
+    }
+
+    .footer-column {
+        align-items: center;
+    }
+
+    .footer-bottom {
+        margin-top: 24px;
+        padding: 20px 30px;
+    }
+
+    .footer-bottom p {
+    font-size: 10px;
     }
 }
 
@@ -1380,8 +1509,8 @@ body {
     }
     
     .service-detail {
-        margin-bottom: 60px;
-        padding: 40px 0;
+        margin-bottom: 24px;
+        padding: 16px 0;
     }
     
     .service-detail-title {
@@ -1599,6 +1728,7 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    object-position: center 20%;
     display: block;
 }
 
@@ -1646,6 +1776,28 @@ body {
     font-weight: var(--font-weight-regular);
     color: #222222;
     max-width: 480px;
+}
+
+.who-we-are-title {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all var(--transition-slow);
+}
+
+.who-we-are-title.in-view {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.services.values-section {
+    padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+    .services.values-section {
+        padding-top: 32px;
+        padding-bottom: 40px;
+    }
 }
 
 /* Slide animations */
@@ -1734,6 +1886,22 @@ body {
     font-size: 35px;
 }
 
+@media (max-width: 768px) {
+    .about-approach .service-detail {
+        margin-bottom: 0px;
+        padding: 2px 0 2px 20px;
+    }
+    .about-approach .service-detail-description {
+        margin-bottom: 16px;
+    }
+    .contact-intro {
+        margin-bottom: 64px;
+    }
+    .contact-hero-description {
+        padding-bottom: 8px;
+    }
+}
+
 .who-we-are-text .who-we-are-divider,
 .who-we-are-row .who-we-are-divider {
     width: 50px;
@@ -1766,6 +1934,39 @@ body {
 
 .contact-faq .service-detail:hover .service-detail-title {
     color: var(--color-primary);
+}
+
+.services.contact-faq {
+    background: #EFEDE8;
+    padding: 80px 0 40px;
+}
+
+.contact-faq-list {
+    max-width: 800px;
+    margin: 60px auto 0;
+}
+
+@media (max-width: 768px) {
+    .services.contact-faq {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+    
+    .contact-faq-list {
+        margin-top: 24px;
+    }
+
+    .contact-faq .service-detail {
+        margin-bottom: 24px;
+    }
+    
+    .contact-faq .service-detail-description {
+        margin-bottom: 0;
+    }
+
+    .footer-links {
+        gap: 20px;
+    }  
 }
 
 /* ==========================================================
@@ -1817,7 +2018,43 @@ body {
 
 @media (max-width: 480px) {
     .hero.hero--page {
-        padding: 120px 0 32px;
+        padding: 100px 0 32px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-hero.hero--page {
+        padding-bottom: 8px;
+    }
+}
+
+/* ---- services.html: Pricing section — previously had inline
+   style="padding: 80px 0;" which couldn't be overridden for mobile. ---- */
+.services.pricing-section {
+    padding: 80px 0;
+}
+
+@media (max-width: 768px) {
+    .services.pricing-section {
+        padding: 40px 0 56px;
+    }
+    
+    .services.pricing-section .section-intro {
+        margin-bottom: 36px;
+    }
+}
+
+/* ---- services.html: final CTA section — previously had inline
+   style="padding: 100px 0; background: #EFEDE8;" which couldn't
+   be overridden for mobile. ---- */
+.contact-section.services-cta {
+    padding: 100px 0;
+    background: #EFEDE8;
+}
+
+@media (max-width: 768px) {
+    .contact-section.services-cta {
+        padding: 48px 0;
     }
 }
 
@@ -1837,13 +2074,13 @@ body {
 
 @media (max-width: 768px) {
     .services.service-block {
-        padding: 56px 24px;
+        padding: 32px 24px;
     }
 }
 
 @media (max-width: 480px) {
     .services.service-block {
-        padding: 48px 20px;
+        padding: 32px 20px;
     }
 }
 
@@ -1863,13 +2100,13 @@ body {
 
 @media (max-width: 768px) {
     .about-approach {
-        padding: 32px 24px;
+        padding: 32px 24px 24px;
     }
 }
 
 @media (max-width: 480px) {
     .about-approach {
-        padding: 28px 20px;
+        padding: 32px 24px 24px;
     }
 }
 
@@ -1909,6 +2146,11 @@ body {
     .who-we-are-row--right .who-we-are-text {
         flex: none;
         width: 100%;
+        order: 2;
+    }
+
+    .who-we-are-row--right .who-we-are-image {
+        order: 1;
     }
 
     .who-we-are-name {
