@@ -9,6 +9,7 @@
 document.addEventListener('DOMContentLoaded', function() {
     initHeaderScroll();
     initMobileMenu();
+    initLogoTap();
     initSmoothScroll();
     initScrollAnimations();
     initCounterAnimations();
@@ -82,6 +83,29 @@ function initMobileMenu() {
 }
 
 // ==========================================
+// LOGO TAP (MOBILE)
+// ==========================================
+function initLogoTap() {
+    const logo = document.querySelector('.logo');
+    if (!logo) return;
+
+    const isMobile = () => window.matchMedia('(max-width: 968px)').matches;
+
+    logo.addEventListener('click', (e) => {
+        if (!isMobile()) return;
+
+        e.preventDefault();
+
+        if (logo.classList.contains('tapped')) return;
+
+        logo.classList.add('tapped');
+        setTimeout(() => {
+            logo.classList.remove('tapped');
+        }, 2750);
+    });
+}
+
+// ==========================================
 // SMOOTH SCROLL
 // ==========================================
 function initSmoothScroll() {
@@ -138,6 +162,15 @@ function initScrollAnimations() {
 
     animatedElements.forEach(el => {
         observer.observe(el);
+    });
+
+    // Scroll-triggered fade for elements NOT in viewport on load
+    document.querySelectorAll('.who-we-are-title').forEach(el => {
+        const rect = el.getBoundingClientRect();
+        if (rect.top >= window.innerHeight || rect.bottom < 0) {
+            observer.observe(el);
+        }
+        // Elements in viewport on load are handled by the preloader callback
     });
 
     // Scroll-triggered slide animations for who-we-are rows NOT in viewport on load
@@ -605,7 +638,7 @@ function initPreloader() {
                 style.remove();
 
                 // Animate who-we-are elements already in viewport after preloader clears
-                const inViewSlides = document.querySelectorAll('.slide-from-left, .slide-from-right');
+                const inViewSlides = document.querySelectorAll('.slide-from-left, .slide-from-right, .who-we-are-title');
                 inViewSlides.forEach((el, index) => {
                     const rect = el.getBoundingClientRect();
                     if (rect.top < window.innerHeight && rect.bottom > 0) {
