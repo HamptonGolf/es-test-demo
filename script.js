@@ -454,6 +454,27 @@ function showFormMessage(message, type) {
 // ==========================================
 // BACK TO TOP BUTTON
 // ==========================================
+function initBackToTop() {
+    const backToTopBtn = document.getElementById('backToTop');
+    
+    if (!backToTopBtn) return;
+
+    window.addEventListener('scroll', () => {
+        if (window.pageYOffset > 500) {
+            backToTopBtn.classList.add('visible');
+        } else {
+            backToTopBtn.classList.remove('visible');
+        }
+    });
+
+    backToTopBtn.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+}
+
 // ==========================================
 // MOBILE SCROLL-TRIGGERED HOVER STATES
 // ==========================================
