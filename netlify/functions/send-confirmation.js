@@ -45,7 +45,7 @@ exports.handler = async function (event) {
                                 <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
                                     <tr>
                                         <td style="padding-right: 12px; vertical-align: middle;">
-                                            <img src="https://eclipsestudio.biz/assets/images/email/eclipse-mark.png" width="34" height="34" alt="" style="display: block; width: 34px; height: 34px;">
+                                            <img src="https://https://es-test-demo.netlify.app/assets/images/email/eclipse-mark.png" width="34" height="34" alt="" style="display: block; width: 34px; height: 34px;">
                                         </td>
                                         <td style="vertical-align: middle;">
                                             <div style="font-size: 24px; letter-spacing: 4px; color: #222222; font-weight: 300; line-height: 1.2;">ECLIPSE</div>
@@ -59,7 +59,7 @@ exports.handler = async function (event) {
                             <!-- Body -->
                             <tr>
                                 <td style="padding: 48px 40px;">
-                                    <h1 style="font-size: 26px; font-weight: 400; color: #222222; margin: 0 0 20px; letter-spacing: -0.5px;">Thank you, ${name}.</h1>
+                                    <h2 style="font-size: 26px; font-weight: 400; color: #222222; margin: 0 0 20px; letter-spacing: -0.5px;">Thank you, ${name}.</h2>
                                     <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 20px;">
                                         We've received your message and appreciate you reaching out to Eclipse Studio. Our team will review your inquiry and get back to you within 1–2 business days.
                                     </p>
