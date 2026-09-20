@@ -88,7 +88,7 @@ exports.handler = async function (event) {
         `;
 
         await transporter.sendMail({
-            from: '"Eclipse Studio" <rlaubach@eclipsestudio.biz>',
+            from: '"Eclipse Studio" <marketing@eclipsestudio.biz>',
             to: email,
             subject: 'Thanks for reaching out to Eclipse Studio',
             html: emailHtml
