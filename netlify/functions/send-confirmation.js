@@ -47,10 +47,10 @@ exports.handler = async function (event) {
                                         <td style="padding-right: 12px; vertical-align: middle;">
                                             <img src="https://es-test-demo.netlify.app/assets/images/email/eclipse-mark.png" width="34" height="34" alt="" style="display: block; width: 34px; height: 34px;">
                                         </td>
-                                        <td style="vertical-align: middle;">
-                                            <div style="font-size: 24px; letter-spacing: 4px; color: #222222; font-weight: 300; line-height: 1.2;">ECLIPSE</div>
-                                            <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 13px; letter-spacing: 3px; color: #B39F7C; font-weight: bold; line-height: 1.2; margin-top: 1px;">STUDIO</div>
-                                        </td>
+                                            <td align="left" style="vertical-align: middle; text-align: left;">
+                                                <div style="font-size: 24px; letter-spacing: 4px; color: #222222; font-weight: 300; line-height: 1.2; text-align: left;">ECLIPSE</div>
+                                                <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 13px; letter-spacing: 3px; color: #B39F7C; font-weight: bold; line-height: 1.2; margin-top: 1px; margin-left: 3px; text-align: left;">STUDIO</div>
+                                            </td>
                                     </tr>
                                 </table>
                             </td>
@@ -59,7 +59,7 @@ exports.handler = async function (event) {
                             <!-- Body -->
                             <tr>
                                 <td style="padding: 48px 40px;">
-                                    <h2 style="font-size: 26px; font-weight: 400; color: #222222; margin: 0 0 20px; letter-spacing: -0.5px;">Thank you, ${name}.</h2>
+                                    <h2 style="font-size: 26px; font-weight: 400; color: #222222; margin: 0 0 20px; letter-spacing: -0.5px; white-space: nowrap;">Thank you, ${name}.</h2>
                                     <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 20px;">
                                         We've received your message and appreciate you reaching out to Eclipse Studio. Our team will review your inquiry and get back to you within 1–2 business days.
                                     </p>
