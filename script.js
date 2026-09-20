@@ -17,6 +17,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initFormValidation();
     initBackToTop();
     initPreloader();
+    initMobileHoverTriggers();
 });
 
 // ==========================================
@@ -453,25 +454,31 @@ function showFormMessage(message, type) {
 // ==========================================
 // BACK TO TOP BUTTON
 // ==========================================
-function initBackToTop() {
-    const backToTopBtn = document.getElementById('backToTop');
-    
-    if (!backToTopBtn) return;
+// ==========================================
+// MOBILE SCROLL-TRIGGERED HOVER STATES
+// ==========================================
+function initMobileHoverTriggers() {
+    const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
 
-    window.addEventListener('scroll', () => {
-        if (window.pageYOffset > 500) {
-            backToTopBtn.classList.add('visible');
-        } else {
-            backToTopBtn.classList.remove('visible');
-        }
-    });
+    if (!isMobile()) return;
 
-    backToTopBtn.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
+    const hoverElements = document.querySelectorAll(
+        '.service-card, .work-item, .feature-item, .about-approach .service-detail'
+    );
+
+    if (hoverElements.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('mobile-hover');
+            } else {
+                entry.target.classList.remove('mobile-hover');
+            }
         });
-    });
+    }, { threshold: 0.5 });
+
+    hoverElements.forEach(el => observer.observe(el));
 }
 
 // ==========================================
