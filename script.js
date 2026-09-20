@@ -305,6 +305,8 @@ function initFormValidation() {
 
         // Submit to Netlify Forms
         const formData = new FormData(form);
+        const nameValue = formData.get('name');
+        const emailValue = formData.get('email');
 
         fetch('/', {
             method: 'POST',
@@ -314,6 +316,13 @@ function initFormValidation() {
         .then(() => {
             showFormMessage('Thank you! We\'ll be in touch soon.', 'success');
             form.reset();
+
+            // Fire-and-forget confirmation email — doesn't block the success message
+            fetch('/.netlify/functions/send-confirmation', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ name: nameValue, email: emailValue })
+            }).catch(err => console.error('Confirmation email failed to send:', err));
         })
         .catch(() => {
             showFormMessage('Something went wrong. Please try again or email us directly.', 'error');
