@@ -45,7 +45,7 @@ exports.handler = async function (event) {
                                 <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
                                     <tr>
                                         <td style="padding-right: 12px; vertical-align: middle;">
-                                            <img src="https://https://es-test-demo.netlify.app/assets/images/email/eclipse-mark.png" width="34" height="34" alt="" style="display: block; width: 34px; height: 34px;">
+                                            <img src="https://es-test-demo.netlify.app/assets/images/email/eclipse-mark.png" width="34" height="34" alt="" style="display: block; width: 34px; height: 34px;">
                                         </td>
                                         <td style="vertical-align: middle;">
                                             <div style="font-size: 24px; letter-spacing: 4px; color: #222222; font-weight: 300; line-height: 1.2;">ECLIPSE</div>
