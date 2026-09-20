@@ -303,19 +303,26 @@ function initFormValidation() {
         submitBtn.textContent = 'SENDING...';
         submitBtn.style.opacity = '0.6';
 
-        // Simulate form submission (replace with actual API call)
-        setTimeout(() => {
-            // Show success message
+        // Submit to Netlify Forms
+        const formData = new FormData(form);
+
+        fetch('/', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+            body: new URLSearchParams(formData).toString()
+        })
+        .then(() => {
             showFormMessage('Thank you! We\'ll be in touch soon.', 'success');
-            
-            // Reset form
             form.reset();
-            
-            // Reset button
+        })
+        .catch(() => {
+            showFormMessage('Something went wrong. Please try again or email us directly.', 'error');
+        })
+        .finally(() => {
             submitBtn.disabled = false;
             submitBtn.textContent = originalText;
             submitBtn.style.opacity = '1';
-        }, 1500);
+        });
     });
 
     // Real-time validation
