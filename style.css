@@ -285,7 +285,7 @@ body {
 .nav-link {
     color: var(--color-primary);
     text-decoration: none;
-    font-weight: bold;
+    font-weight: 400;
     font-size: 15px;
     letter-spacing: 2px;
     position: relative;
@@ -455,7 +455,7 @@ body {
     border: none;
     border-radius: 0;
     font-size: 15px;
-    font-weight: bold;
+    font-weight: 400;
     cursor: pointer;
     transition: all var(--transition-medium);
     text-decoration: none;
@@ -490,7 +490,6 @@ body {
 .btn-primary:hover {
     background: #7D6D96;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(142, 127, 169, 0.3);
 }
 
 .btn-secondary {
@@ -501,7 +500,6 @@ body {
 .btn-secondary:hover {
     background: #A38E6B;
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(179, 159, 124, 0.3);
 }
 
 .btn-full {
@@ -646,6 +644,7 @@ body {
     letter-spacing: 1px;
     transition: color var(--transition-fast);
     margin-bottom: 4px;
+    font-weight: 400;
 }
 
 .service-description {
@@ -739,6 +738,13 @@ body {
     text-align: center;
 }
 
+.stats-grid--3col {
+    grid-template-columns: repeat(3, 1fr);
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
 .stat-item {
     opacity: 0;
     transform: translateY(30px);
@@ -796,7 +802,7 @@ body {
 .stat-text {
     color: var(--color-secondary);
     font-size: 18px;
-    font-weight: bold;
+    font-weight: 400;
     letter-spacing: 2px;
     text-transform: uppercase;
 }
@@ -816,6 +822,13 @@ body {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 60px;
+}
+
+@media (min-width: 969px) {
+    .work-grid--centered {
+        grid-template-columns: minmax(0, 360px);
+        justify-content: center;
+    }
 }
 
 .work-button-wrapper {
@@ -1013,7 +1026,7 @@ body {
     top: 0;
     font-size: 13px;
     color: var(--color-primary);
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .form-group textarea {
@@ -1449,14 +1462,14 @@ body {
     font-size: 15px;
     color: var(--color-secondary);
     letter-spacing: 3px;
-    font-weight: bold;
+    font-weight: 400;
     margin-bottom: 20px;
 }
 
 .service-detail-title {
     font-size: 46px;
     color: var(--color-primary);
-    font-weight: var(--font-weight-medium);
+    font-weight: 400;
     letter-spacing: -1px;
     margin-bottom: 24px;
     line-height: 1.15;
@@ -1495,7 +1508,7 @@ body {
     font-size: 20px;
     color: var(--color-primary);
     margin-bottom: 12px;
-    font-weight: var(--font-weight-semibold);
+    font-weight: 400;
     letter-spacing: 0.5px;
 }
 
@@ -1613,7 +1626,7 @@ body {
     font-size: 11px;
     letter-spacing: 2px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 400;
     color: var(--color-white);
     background: var(--color-secondary);
     padding: 7px 0;
@@ -1626,14 +1639,14 @@ body {
     font-size: 14px;
     letter-spacing: 3px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 400;
     color: var(--color-primary);
     margin-bottom: 16px;
 }
 
 .pricing-price {
     font-size: 62px;
-    font-weight: var(--font-weight-display);
+    font-weight: 400;
     color: var(--color-text);
     line-height: 1;
     margin-bottom: 20px;
@@ -1747,7 +1760,7 @@ body {
     text-transform: uppercase;
     color: var(--color-primary);
     margin-bottom: 12px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .who-we-are-name {
@@ -1772,7 +1785,7 @@ body {
     text-transform: uppercase;
     color: var(--color-secondary);
     margin-bottom: 24px;
-    font-weight: bold;
+    font-weight: 400;
 }
 
 .who-we-are-bio {
