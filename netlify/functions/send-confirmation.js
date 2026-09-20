@@ -39,13 +39,25 @@ exports.handler = async function (event) {
                     <td align="center">
                         <table role="presentation" width="100%" style="max-width: 560px; background-color: #FFFFFF;" cellpadding="0" cellspacing="0">
                             
-                            <!-- Header -->
-                            <tr>
-                                <td style="background-color: #EFEDE8; padding: 40px; text-align: center;">
-                                    <div style="font-size: 24px; letter-spacing: 4px; color: #222222; font-weight: 300;">ECLIPSE</div>
-                                    <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 14px; letter-spacing: 3px; color: #B39F7C; font-weight: bold; margin-top: 2px;">STUDIO</div>
-                                </td>
-                            </tr>
+                        <!-- Header -->
+                        <tr>
+                            <td style="background-color: #EFEDE8; padding: 40px; text-align: center;">
+                                <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
+                                    <tr>
+                                        <td style="padding-right: 12px; vertical-align: middle;">
+                                            <div style="position: relative; width: 34px; height: 34px;">
+                                                <div style="position: absolute; top: 0; left: 0; width: 34px; height: 34px; border-radius: 50%; border: 3px solid #8E7FA9; box-sizing: border-box;"></div>
+                                                <div style="position: absolute; top: 5px; left: 12px; width: 24px; height: 24px; border-radius: 50%; background-color: #8E7FA9;"></div>
+                                            </div>
+                                        </td>
+                                        <td style="vertical-align: middle;">
+                                            <div style="font-size: 24px; letter-spacing: 4px; color: #222222; font-weight: 300; line-height: 1.2;">ECLIPSE</div>
+                                            <div style="font-family: Georgia, 'Times New Roman', serif; font-size: 13px; letter-spacing: 3px; color: #B39F7C; font-weight: bold; line-height: 1.2; margin-top: 1px;">STUDIO</div>
+                                        </td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr>
 
                             <!-- Body -->
                             <tr>
@@ -57,13 +69,13 @@ exports.handler = async function (event) {
                                     <p style="font-size: 16px; line-height: 1.6; color: #222222; margin: 0 0 32px;">
                                         In the meantime, feel free to explore our recent work or learn more about how we help brands find their eclipse moment.
                                     </p>
-                                    <table role="presentation" cellpadding="0" cellspacing="0">
-                                        <tr>
-                                            <td style="background-color: #8E7FA9; text-align: center;">
-                                                <a href="https://eclipsestudio.biz/portfolio.html" style="display: inline-block; padding: 16px 36px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF; text-decoration: none; font-weight: bold;">View Our Work</a>
-                                            </td>
-                                        </tr>
-                                    </table>
+                                <table role="presentation" cellpadding="0" cellspacing="0" align="center" style="margin: 0 auto;">
+                                    <tr>
+                                        <td style="background-color: #8E7FA9; text-align: center;">
+                                            <a href="https://eclipsestudio.biz/portfolio" style="display: inline-block; padding: 16px 36px; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; color: #FFFFFF; text-decoration: none; font-weight: bold;">View Our Work</a>
+                                        </td>
+                                    </tr>
+                                </table>
                                 </td>
                             </tr>
 
