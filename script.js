@@ -477,6 +477,9 @@ function initBackToTop() {
 
 // ==========================================
 // MOBILE SCROLL-TRIGGERED HOVER STATES
+// Only the single element closest to vertical
+// center of the viewport gets '.mobile-hover' —
+// never more than one at a time.
 // ==========================================
 function initMobileHoverTriggers() {
     const isMobile = () => window.matchMedia('(max-width: 768px)').matches;
@@ -484,22 +487,42 @@ function initMobileHoverTriggers() {
     if (!isMobile()) return;
 
     const hoverElements = document.querySelectorAll(
-        '.service-card, .work-item, .feature-item, .about-approach .service-detail'
+        '.service-card, .work-item, .feature-item, .about-approach .service-detail, .who-we-are-row'
     );
 
     if (hoverElements.length === 0) return;
 
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add('mobile-hover');
-            } else {
-                entry.target.classList.remove('mobile-hover');
+    let currentActive = null;
+
+    function updateActiveHover() {
+        const viewportCenter = window.innerHeight / 2;
+        let closestEl = null;
+        let closestDistance = Infinity;
+
+        hoverElements.forEach(el => {
+            const rect = el.getBoundingClientRect();
+
+            // Skip elements not currently on screen at all
+            if (rect.bottom < 0 || rect.top > window.innerHeight) return;
+
+            const elCenter = rect.top + rect.height / 2;
+            const distance = Math.abs(elCenter - viewportCenter);
+
+            if (distance < closestDistance) {
+                closestDistance = distance;
+                closestEl = el;
             }
         });
-    }, { threshold: 0.5 });
 
-    hoverElements.forEach(el => observer.observe(el));
+        if (closestEl !== currentActive) {
+            if (currentActive) currentActive.classList.remove('mobile-hover');
+            if (closestEl) closestEl.classList.add('mobile-hover');
+            currentActive = closestEl;
+        }
+    }
+
+    window.addEventListener('scroll', throttle(updateActiveHover, 100));
+    updateActiveHover();
 }
 
 // ==========================================
