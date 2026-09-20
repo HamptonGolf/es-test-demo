@@ -2257,10 +2257,6 @@ body {
         width: 90px;
     }
 
-    .work-item.mobile-hover .work-hover-line {
-        width: 56%;
-    }
-
     .feature-item.mobile-hover {
         border-left-color: var(--color-secondary);
         transform: translateX(5px);
@@ -2271,7 +2267,12 @@ body {
         transform: translateX(5px);
     }
 
-    .who-we-are-row.mobile-hover .who-we-are-divider {
-        width: 65%;
+    .contact-faq .service-detail.mobile-hover {
+        border-left-color: var(--color-secondary);
+        transform: translateX(5px);
+    }
+
+    .contact-faq .service-detail.mobile-hover .service-detail-title {
+        color: var(--color-primary);
     }
 }
