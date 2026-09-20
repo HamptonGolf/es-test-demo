@@ -1,3 +1,4 @@
+// v2 - forcing fresh deploy
 const nodemailer = require('nodemailer');
 
 exports.handler = async function (event) {
