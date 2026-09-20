@@ -103,6 +103,7 @@ exports.handler = async function (event) {
             from: '"Eclipse Studio" <marketing@eclipsestudio.biz>',
             to: email,
             subject: 'Thanks for reaching out to Eclipse Studio',
+            text: `Thank you, ${name}.\n\nWe've received your message and appreciate you reaching out to Eclipse Studio. Our team will review your inquiry and get back to you within 1–2 business days.\n\nView our work: https://eclipsestudio.biz/portfolio.html\n\nEclipse Studio | Jacksonville, FL\nmarketing@eclipsestudio.biz`,
             html: emailHtml
         });
 
