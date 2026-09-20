@@ -2243,3 +2243,30 @@ body {
         font-size: 35px;
     }
 }
+
+/* ==========================================
+   MOBILE SCROLL-TRIGGERED HOVER STATES
+   Touch devices can't :hover, so these mirror
+   the existing hover effects using a
+   .mobile-hover class toggled by IntersectionObserver
+   in script.js as each element scrolls into view.
+   ========================================== */
+@media (max-width: 768px) {
+    .service-card.mobile-hover .service-hover-line {
+        width: 90px;
+    }
+
+    .work-item.mobile-hover .work-hover-line {
+        width: 56%;
+    }
+
+    .feature-item.mobile-hover {
+        border-left-color: var(--color-secondary);
+        transform: translateX(5px);
+    }
+
+    .about-approach .service-detail.mobile-hover {
+        border-left-color: var(--color-secondary);
+        transform: translateX(5px);
+    }
+}
