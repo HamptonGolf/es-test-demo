@@ -487,7 +487,7 @@ function initMobileHoverTriggers() {
     if (!isMobile()) return;
 
     const hoverElements = document.querySelectorAll(
-        '.service-card, .work-item, .feature-item, .about-approach .service-detail, .who-we-are-row'
+        '.service-card, .feature-item, .about-approach .service-detail, .contact-faq .service-detail'
     );
 
     if (hoverElements.length === 0) return;
