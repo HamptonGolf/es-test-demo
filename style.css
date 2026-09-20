@@ -2248,8 +2248,9 @@ body {
    MOBILE SCROLL-TRIGGERED HOVER STATES
    Touch devices can't :hover, so these mirror
    the existing hover effects using a
-   .mobile-hover class toggled by IntersectionObserver
-   in script.js as each element scrolls into view.
+   .mobile-hover class toggled in script.js —
+   applied only to the single element closest
+   to the vertical center of the viewport.
    ========================================== */
 @media (max-width: 768px) {
     .service-card.mobile-hover .service-hover-line {
@@ -2268,5 +2269,9 @@ body {
     .about-approach .service-detail.mobile-hover {
         border-left-color: var(--color-secondary);
         transform: translateX(5px);
+    }
+
+    .who-we-are-row.mobile-hover .who-we-are-divider {
+        width: 65%;
     }
 }
