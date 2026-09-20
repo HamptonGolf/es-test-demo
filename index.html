@@ -175,7 +175,12 @@
             <h3 class="section-title centered">Let's Work Together</h3>
             <p class="contact-intro">Ready to find your eclipse moment? Get in touch to discuss how we can help you reach your goals and grow your business.<span class="underline-deco" style="--underline-w: 600px;"></span></p>
             
-            <form class="contact-form" id="contactForm">
+            <form class="contact-form" id="contactForm" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+                <input type="hidden" name="form-name" value="contact">
+                <p style="display: none;">
+                    <label>Don't fill this out if you're human: <input name="bot-field"></label>
+                </p>
+
                 <div class="form-row">
                     <div class="form-group">
                         <input type="text" id="name" name="name" required>
@@ -199,7 +204,6 @@
                 
                 <button type="submit" class="btn btn-primary btn-full">Send Message</button>
             </form>
-        </div>
     </section>
 
     <!-- Footer -->
